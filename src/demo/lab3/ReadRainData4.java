@@ -25,9 +25,6 @@ public class ReadRainData4 {
 			double totalRainDataEachStation = 0;
 			int noOfRecordEachStation = 0;
 			
-//			String stationName[] = {};
-//			double data
-			
 			// 3. Create object
 			disObject = new DataInputStream(new FileInputStream(targetStorage));
 			
