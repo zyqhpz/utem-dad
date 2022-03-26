@@ -30,7 +30,7 @@ public class WriteRainData4 {
 		String date[] = { "20/03/2022", "21/03/2022", "22/03/2022", "23/04/2022", "24/04/2022", "25/04/2022" };
 
 		double rainData1[] = { 0.0, 15.0, 0.0, 0.0, 28.0, 0.0 }; // Ladang Sg. Bharu
-		double rainData2[] = { 0.0, 0.0, 0.0, 0.0, 0.0, 0.0 }; // Simpang Ampat
+		double rainData2[] = { 0.0, 0.0, 0.0, 14.0, 4.0, 0.0 }; // Simpang Ampat
 
 		double rainData3[] = { 0.0, 16.0, 0.0, 0.0, 6.0, 0.0 }; // Hospital Jasin
 		double rainData4[] = { 0.0, 25.0, 0.0, 0.0, 1.0, 0.0 }; // Telok Rimba
@@ -38,9 +38,27 @@ public class WriteRainData4 {
 		double rainData5[] = { 0.0, 17.0, 0.0, 0.0, 0.0, 0.0 }; // Batu Hampar
 		double rainData6[] = { 0.0, 4.0, 0.0, 0.0, 0.0, 0.0 }; // Klebang Besar
 
+		double rainData2320005[] = { 0.0, 15.0, 0.0, 0.0, 28.0, 0.0 }; // Ladang Sg. Bharu
+		double rainData2421003[] = { 0.0, 0.0, 0.0, 0.0, 0.0, 0.0 }; // Simpang Ampat
+
+		double rainData2324033[] = { 0.0, 16.0, 0.0, 0.0, 6.0, 0.0 }; // Hospital Jasin
+		double rainData2125002[] = { 0.0, 25.0, 0.0, 0.0, 1.0, 0.0 }; // Telok Rimba
+
+		double rainData2222033[] = { 0.0, 17.0, 0.0, 0.0, 0.0, 0.0 }; // Batu Hampar
+		double rainData2222003[] = { 0.0, 4.0, 0.0, 0.0, 0.0, 0.0 }; // Klebang Besar
+
 		// double rainFall[][] = { { rainData1, rainData2 }, { rainData3, rainData4 }, {
 		// rainData5, rainData6 } };
-		double rainFall[][] = { rainData1, rainData2, rainData3, rainData4, rainData5, rainData6 };
+		// double rainFall[][] = { rainData1, rainData2, rainData3, rainData4,
+		// rainData5, rainData6 };
+		double[][] rain = new double[3][2];
+		// rain[0]={rainData1,rainData2};
+
+		double[][][] rainFall = { { rainData1, rainData2 }, { rainData3, rainData4 }, { rainData5, rainData6 } };
+		// double rainFall[][] = {
+		// { { 0.0, 15.0, 0.0, 0.0, 28.0, 0.0 },
+		// { 0.0, 0.0, 0.0, 0.0, 0.0, 0.0 } },
+		// rainData3, rainData4, rainData5, rainData6 };
 
 		try {
 			// 2. Create stream to read data
@@ -56,10 +74,10 @@ public class WriteRainData4 {
 					dos.writeUTF(stationName[i][j]);
 					dos.writeUTF(districtName[i]);
 
-					for (int k = 0; k < rainFall[i].length; k++) {
+					for (int k = 0; k < rainFall[i][j].length; k++) {
 
 						dos.writeUTF(date[k]);
-						dos.writeDouble(rainFall[i][k]);
+						dos.writeDouble(rainFall[i][j][k]);
 
 						// 4. Flush for each writing
 						dos.flush();
