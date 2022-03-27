@@ -1,5 +1,12 @@
 package demo.lab3;
 
+/**
+ * Generate a file consists of rainfall data in sequence of array
+ * using Writer
+ * 
+ * @author zyqq
+ */
+
 import java.io.BufferedWriter;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -9,6 +16,7 @@ import java.io.Writer;
 public class WriteRainData5 {
 	public static void main(String[] args) {
 
+		// 1. Declaration of target storage
 		String targetStorage = "rainData5.txt";
 
 		// data declaration

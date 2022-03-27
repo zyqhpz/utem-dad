@@ -51,7 +51,7 @@ public class ReadRainData4 {
 					String date = disObject.readUTF();
 					rainFall = disObject.readDouble();
 
-					System.out.println("Date: " + date + " - " + rainFall);
+					System.out.println(date + " - " + rainFall);
 
 					totalRainDataEachStation += rainFall;
 					noOfRecordEachStation++;
@@ -61,7 +61,7 @@ public class ReadRainData4 {
 						+ districtName + " is " + totalRainDataEachStation / noOfRecordEachStation + "\n");
 
 			}
-			
+
 			System.out.println("Number of station detected is " + numOfStation + " station(s).");
 
 			// 5. Close stream
