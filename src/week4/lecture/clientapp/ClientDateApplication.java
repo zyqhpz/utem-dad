@@ -33,6 +33,7 @@ public class ClientDateApplication {
 
 			// 4. Process the response
 			clientFrame.updateServerDate(currentDate);
+			clientFrame.updateConnectionStatus(true);
 
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
