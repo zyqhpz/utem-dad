@@ -17,7 +17,6 @@ public class ServerTranslationApp {
             System.out.println("Waiting for request");
 
             while (true) {
-                // new ServerTranslationHandler(serverSocket.accept(), text1).start();
                 Socket clientSocket = serverSocket.accept();
 
                 DataOutputStream outputStream = new DataOutputStream(clientSocket.getOutputStream());

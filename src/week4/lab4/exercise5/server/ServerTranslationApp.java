@@ -6,6 +6,14 @@ import java.io.IOException;
 import java.net.ServerSocket;
 import java.net.Socket;
 
+/*
+ * This class represent the server to receive a text from user
+ * and send back the translated text to the user
+ * 
+ * @author haziqhapiz
+ *
+ */
+
 public class ServerTranslationApp {
 	public static void main(String[] args) throws IOException {
 		ServerSocket serverSocket = null;
@@ -20,19 +28,21 @@ public class ServerTranslationApp {
 			System.out.println("Waiting for request");
 
 			while (true) {
-				// new ServerTranslationHandler(serverSocket.accept(), text1).start();
 				Socket clientSocket = serverSocket.accept();
 
 				// retrieve text and selected language from client
-				DataInputStream dis = new DataInputStream(clientSocket.getInputStream());
+				DataInputStream dis = new DataInputStream(
+						clientSocket.getInputStream());
 				String text = dis.readUTF();
 				int language = dis.readInt();
 
 				// translate text
-				String translatedText = translationApp.translateText(text, language);
+				String translatedText = translationApp.translateText(
+						text, language);
 
 				// send translated text to client
-				DataOutputStream dos = new DataOutputStream(clientSocket.getOutputStream());
+				DataOutputStream dos = new DataOutputStream(
+						clientSocket.getOutputStream());
 				dos.writeUTF(translatedText);
 
 				dis.close();

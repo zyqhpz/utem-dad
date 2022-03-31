@@ -1,7 +1,15 @@
 package exercise5.server;
 
+/*
+ * This class represent a controller to translate the text from user
+ * 
+ * @author haziqhapiz
+ *
+ */
+
 public class TranslationApp {
 
+	// translate text
     public String translateText(String text, int language) {
         String translatedText = "";
 

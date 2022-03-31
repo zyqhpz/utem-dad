@@ -6,6 +6,16 @@ import java.net.InetAddress;
 import java.net.Socket;
 import java.util.Scanner;
 
+/*
+ * This class represent the window for the client side TCP application.
+ * It receive an input from user
+ * send the input to server to be translate
+ * retrieve the translated text from user to be display to user
+ * 
+ * @author haziqhapiz
+ *
+ */
+
 public class ClientTranslationApp {
     
     public static void main(String[] args) {
@@ -38,6 +48,7 @@ public class ClientTranslationApp {
         }
     }
     
+    // choose language for text to be translate into
     private static int chooseLanguage() {
         Scanner scanner = new Scanner(System.in);
 
@@ -52,7 +63,8 @@ public class ClientTranslationApp {
         return language;
     }
 
-    public static String chooseText() {
+    // choose which text to be translate
+    private static String chooseText() {
     	System.out.println("Choose text to translate:- ");
         System.out.println("1. Good morning");
         System.out.println("2. Good night");
