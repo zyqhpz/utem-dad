@@ -1,4 +1,4 @@
-package week4.lecture;
+package week4.lecture.clientapp;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
