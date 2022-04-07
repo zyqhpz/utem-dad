@@ -4,7 +4,6 @@ import java.util.List;
 import java.util.Scanner;
 
 import week5.lab.sale.model.Customer;
-import week5.lab.sale.server.controller.CustomerDataManager;
 
 public class CustomerViewer {
 
@@ -12,15 +11,16 @@ public class CustomerViewer {
 
         // Some information about the record
         System.out.println("\tNumber of record: " + customers.size());
-        System.out.println("\tCustomer Information");
+        System.out.println("\n\tCustomer Information");
+
+        sortCustomer(customers);
 
         // Print all products on console
+        int i = 1;
         for (Customer customer : customers) {
-
-            System.out.println("\tCustomer Id: " + customer.getCustomerId());
-            System.out.println("\tCustomer Name: " + customer.getName());
+            System.out.println("\t" + i + ". Name: " + customer.getName() + ", ID: " + customer.getCustomerId());
+            i++;
         }
-
     }
 
     // receive customer id from user using java Scanner
@@ -43,27 +43,12 @@ public class CustomerViewer {
         return customerName;
     }
 
-    // // search customer by customer id
-    // public void searchCustomerById(List<Customer> customers, int customerId) {
+    // sort customer by customer name
+    public List<Customer> sortCustomer(List<Customer> customers) {
 
-    // // Some information about the record
-    // System.out.println("\tNumber of record: " + customers.size());
-    // System.out.println("\tCustomer Information");
+        customers.sort((Customer c1, Customer c2) -> c1.getName().compareTo(c2.getName()));
 
-    // CustomerDataManager customerDataManager = new CustomerDataManager();
-
-    // // create a loop to search a customer
-    // customer.sear
-
-    // // Print all customers on console
-    // for (Customer customer : customers) {
-
-    // if (customer.getCustomerId() == customerId) {
-    // System.out.println("\tCustomer Id: " + customer.getCustomerId());
-    // System.out.println("\tCustomer Name: " + customer.getName());
-    // }
-    // }
-
-    // }
+        return customers;
+    }
 
 }

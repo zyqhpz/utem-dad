@@ -68,12 +68,6 @@ public class TCPCustomerServerApp {
                 System.out.println("\tSending Customer object to client.. ");
 
                 // 4. Respond to client
-                // OutputStream os = clientSocket.getOutputStream();
-                // ObjectOutputStream oos = new ObjectOutputStream(os);
-                // oos.writeObject(customers);
-                // System.out.println("\tSending : " + products.size()
-                // + " products");
-
             }
 
         } catch (Exception ex) {

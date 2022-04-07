@@ -8,9 +8,13 @@ import week5.lab.sale.model.Customer;
 public class CustomerDataManager {
     private List<Customer> customers;
 
+    public CustomerDataManager() {
+        this.customers = new ArrayList<Customer>();
+        createSample();
+    }
+
     // create a list of customers. 10 customers
-    private List<Customer> createSample() {
-        customers = new ArrayList<Customer>();
+    private void createSample() {
 
         // store name in array
         String[] names = { "John", "Mary", "Peter", "James", "Linda", "David", "Susan", "Robert", "Lisa", "Michael" };
@@ -26,8 +30,6 @@ public class CustomerDataManager {
             customer.setName(names[i]);
             customers.add(customer);
         }
-
-        return customers;
     }
 
     // search a customer based on customer's name and return a customer object
@@ -83,7 +85,4 @@ public class CustomerDataManager {
         return customers;
     }
 
-    public CustomerDataManager() {
-        this.customers = createSample();
-    }
 }

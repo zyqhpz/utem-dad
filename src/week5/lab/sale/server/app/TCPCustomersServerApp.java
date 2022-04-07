@@ -1,7 +1,5 @@
 package week5.lab.sale.server.app;
 
-import java.io.DataInputStream;
-import java.io.InputStream;
 import java.io.ObjectOutputStream;
 import java.io.OutputStream;
 import java.net.ServerSocket;
@@ -11,7 +9,7 @@ import java.util.List;
 import week5.lab.sale.model.Customer;
 import week5.lab.sale.server.controller.CustomerDataManager;
 
-public class TCPCustomerServerApp1 {
+public class TCPCustomersServerApp {
 
     public static void main(String[] args) {
 
@@ -19,9 +17,9 @@ public class TCPCustomerServerApp1 {
 
         CustomerDataManager manager = new CustomerDataManager();
 
-        System.out.println("\n\tExecuting TCPProductsServerApp");
+        System.out.println("\n\tExecuting TCPCustomersServerApp");
 
-        Customer customer;
+        List<Customer> customers;
 
         try {
 
@@ -37,7 +35,7 @@ public class TCPCustomerServerApp1 {
                 Socket clientSocket = serverSocket.accept();
 
                 // Get customers
-                List<Customer> customers = manager.getCustomers();
+                customers = manager.getCustomers();
 
                 // send customer to client
                 OutputStream os = clientSocket.getOutputStream();
