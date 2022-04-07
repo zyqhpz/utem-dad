@@ -1,4 +1,4 @@
-package exercise3.clientapp;
+package week4.lab4.exercise3.clientapp;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
@@ -26,7 +26,7 @@ public class ClientTextFrame extends JFrame {
 	// Private attributes for frame size
 	private int width = 700;
 	private int height = 200;
-	
+
 	private String text;
 	private int count;
 
@@ -59,11 +59,11 @@ public class ClientTextFrame extends JFrame {
 	public void setText(String text) {
 		this.text = text;
 	}
-	
+
 	public String getText() {
 		return text;
 	}
-	
+
 	/**
 	 * This method update the value of count on the frame
 	 * 

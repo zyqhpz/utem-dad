@@ -32,7 +32,7 @@ public class ClientTextApplication {
 			DataInputStream inputStream = new DataInputStream(socket.getInputStream());
 
 			String text = inputStream.readUTF();
-			int count = inputStream.readInt()
+			int count = inputStream.readInt();
 
 			// 4. Process the response
 			clientFrame.setCount(count);

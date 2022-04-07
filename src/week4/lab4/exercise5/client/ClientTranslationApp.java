@@ -1,4 +1,4 @@
-package exercise5.client;
+package week4.lab4.exercise5.client;
 
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
@@ -17,7 +17,7 @@ import java.util.Scanner;
  */
 
 public class ClientTranslationApp {
-    
+
     public static void main(String[] args) {
         try {
             Socket socket = new Socket(InetAddress.getLocalHost(), 4229);
@@ -42,12 +42,12 @@ public class ClientTranslationApp {
             dis.close();
             dos.close();
             socket.close();
-        
+
         } catch (Exception e) {
             e.printStackTrace();
         }
     }
-    
+
     // choose language for text to be translate into
     private static int chooseLanguage() {
         Scanner scanner = new Scanner(System.in);
@@ -65,7 +65,7 @@ public class ClientTranslationApp {
 
     // choose which text to be translate
     private static String chooseText() {
-    	System.out.println("Choose text to translate:- ");
+        System.out.println("Choose text to translate:- ");
         System.out.println("1. Good morning");
         System.out.println("2. Good night");
         System.out.println("3. How are you?");
@@ -75,7 +75,7 @@ public class ClientTranslationApp {
         System.out.print(">> ");
 
         Scanner scanner = new Scanner(System.in);
-        
+
         String text = "";
         int choice = scanner.nextInt();
 

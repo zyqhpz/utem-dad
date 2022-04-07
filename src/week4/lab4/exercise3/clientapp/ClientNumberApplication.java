@@ -1,4 +1,4 @@
-package exercise3.clientapp;
+package week4.lab4.exercise3.clientapp;
 
 import java.io.DataInputStream;
 import java.io.InputStream;
@@ -24,7 +24,7 @@ public class ClientNumberApplication {
 		try {
 			// 1. connect to remote machine
 			// 2. send request to the server
-			InetAddress ip =  InetAddress.getByName(ipAddress);
+			InetAddress ip = InetAddress.getByName(ipAddress);
 			Socket socket = new Socket(ip, portNo);
 
 			System.out.print("Connected to server");
@@ -37,7 +37,7 @@ public class ClientNumberApplication {
 			while (dis.available() != -1) {
 				number = dis.readInt();
 
-				if (number == -1) 
+				if (number == -1)
 					break;
 				System.out.println("Number: " + number);
 			}

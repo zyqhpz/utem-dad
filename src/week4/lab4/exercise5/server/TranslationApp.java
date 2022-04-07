@@ -1,4 +1,4 @@
-package exercise5.server;
+package week4.lab4.exercise5.server;
 
 /*
  * This class represent a controller to translate the text from user
@@ -9,7 +9,7 @@ package exercise5.server;
 
 public class TranslationApp {
 
-	// translate text
+    // translate text
     public String translateText(String text, int language) {
         String translatedText = "";
 

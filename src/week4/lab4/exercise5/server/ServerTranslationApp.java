@@ -1,4 +1,4 @@
-package exercise5.server;
+package week4.lab4.exercise5.server;
 
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
@@ -39,6 +39,12 @@ public class ServerTranslationApp {
 				// translate text
 				String translatedText = translationApp.translateText(
 						text, language);
+
+				// create log
+				String log = "Text get from client: " + text + " | Translated: "
+						+ translatedText;
+
+				System.out.println(log);
 
 				// send translated text to client
 				DataOutputStream dos = new DataOutputStream(

@@ -1,4 +1,4 @@
-package exercise4.serverapp;
+package week4.lab4.exercise4.serverapp;
 
 import java.io.DataOutputStream;
 import java.io.IOException;
@@ -6,9 +6,9 @@ import java.net.ServerSocket;
 import java.net.Socket;
 
 public class ServerTranslationApp {
-	public static void main(String[] args) throws IOException {
+    public static void main(String[] args) throws IOException {
         ServerSocket serverSocket = null;
-        
+
         try {
             int portNo = 4228;
             serverSocket = new ServerSocket(portNo);
