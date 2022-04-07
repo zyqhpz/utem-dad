@@ -1,10 +1,10 @@
-package week5.sale.client.view;
+package week5.lab.sale.client.view;
 
 import java.util.List;
 import java.util.Scanner;
 
-import week5.sale.model.Customer;
-import week5.sale.server.controller.CustomerDataManager;
+import week5.lab.sale.model.Customer;
+import week5.lab.sale.server.controller.CustomerDataManager;
 
 public class CustomerViewer {
 
@@ -24,7 +24,7 @@ public class CustomerViewer {
     }
 
     // receive customer id from user using java Scanner
-    public int getCustomerId(){
+    public int getCustomerId() {
         System.out.print("Enter customer id: ");
         Scanner sc = new Scanner(System.in); // Create a Scanner object
 
@@ -46,25 +46,23 @@ public class CustomerViewer {
     // // search customer by customer id
     // public void searchCustomerById(List<Customer> customers, int customerId) {
 
-    //     // Some information about the record
-    //     System.out.println("\tNumber of record: " + customers.size());
-    //     System.out.println("\tCustomer Information");
+    // // Some information about the record
+    // System.out.println("\tNumber of record: " + customers.size());
+    // System.out.println("\tCustomer Information");
 
+    // CustomerDataManager customerDataManager = new CustomerDataManager();
 
-    //     CustomerDataManager customerDataManager = new CustomerDataManager();
+    // // create a loop to search a customer
+    // customer.sear
 
-    //     // create a loop to search a customer
-    //     customer.sear
-        
+    // // Print all customers on console
+    // for (Customer customer : customers) {
 
-    //     // Print all customers on console
-    //     for (Customer customer : customers) {
-
-    //         if (customer.getCustomerId() == customerId) {
-    //             System.out.println("\tCustomer Id: " + customer.getCustomerId());
-    //             System.out.println("\tCustomer Name: " + customer.getName());
-    //         }
-    //     }
+    // if (customer.getCustomerId() == customerId) {
+    // System.out.println("\tCustomer Id: " + customer.getCustomerId());
+    // System.out.println("\tCustomer Name: " + customer.getName());
+    // }
+    // }
 
     // }
 

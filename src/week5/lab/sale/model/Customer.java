@@ -1,4 +1,4 @@
-package week5.sale.model;
+package week5.lab.sale.model;
 
 import java.io.Serializable;
 import java.util.List;
@@ -24,7 +24,7 @@ public class Customer implements Serializable {
     }
 
     // public List<Customer> getCustomers() {
-    //     return customers;
+    // return customers;
     // }
 
     public Customer searchCustomerById(int id, List<Customer> customers) {

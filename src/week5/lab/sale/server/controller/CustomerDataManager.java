@@ -1,8 +1,9 @@
-package week5.sale.server.controller;
+package week5.lab.sale.server.controller;
+
 import java.util.ArrayList;
 import java.util.List;
 
-import week5.sale.model.Customer;
+import week5.lab.sale.model.Customer;
 
 public class CustomerDataManager {
     private List<Customer> customers;
@@ -81,7 +82,7 @@ public class CustomerDataManager {
     public List<Customer> getCustomers() {
         return customers;
     }
-    
+
     public CustomerDataManager() {
         this.customers = createSample();
     }

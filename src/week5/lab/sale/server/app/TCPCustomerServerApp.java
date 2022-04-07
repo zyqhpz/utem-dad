@@ -1,4 +1,4 @@
-package week5.sale.server.app;
+package week5.lab.sale.server.app;
 
 import java.io.DataInputStream;
 import java.io.InputStream;
@@ -8,8 +8,8 @@ import java.net.ServerSocket;
 import java.net.Socket;
 import java.util.List;
 
-import week5.sale.model.Customer;
-import week5.sale.server.controller.CustomerDataManager;
+import week5.lab.sale.model.Customer;
+import week5.lab.sale.server.controller.CustomerDataManager;
 
 public class TCPCustomerServerApp {
 
@@ -57,7 +57,7 @@ public class TCPCustomerServerApp {
 
                 // read customer name from client request
                 String customerName = dis.readUTF();
-                
+
                 System.out.println("\tCustomer name Received: " + customerName);
 
                 // search customer by customer name
@@ -67,14 +67,12 @@ public class TCPCustomerServerApp {
 
                 System.out.println("\tSending Customer object to client.. ");
 
-                
-
                 // 4. Respond to client
                 // OutputStream os = clientSocket.getOutputStream();
                 // ObjectOutputStream oos = new ObjectOutputStream(os);
                 // oos.writeObject(customers);
                 // System.out.println("\tSending : " + products.size()
-                //         + " products");
+                // + " products");
 
             }
 

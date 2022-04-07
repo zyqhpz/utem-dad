@@ -1,4 +1,4 @@
-package week5.sale.client.CustomerApp;
+package week5.lab.sale.client.CustomerApp;
 
 import java.io.DataOutputStream;
 import java.io.InputStream;
@@ -6,8 +6,8 @@ import java.io.ObjectInputStream;
 import java.net.InetAddress;
 import java.net.Socket;
 
-import week5.sale.client.view.CustomerViewer;
-import week5.sale.model.Customer;
+import week5.lab.sale.client.view.CustomerViewer;
+import week5.lab.sale.model.Customer;
 
 /**
  * This is a TCP client class that get int and string input.
@@ -40,7 +40,7 @@ public class TCPCustomerClientApp {
             // send customer id to server to search customer by customer id
             DataOutputStream dos = new DataOutputStream(socket.getOutputStream());
             dos.writeInt(customerId);
-            
+
             // get customer from server
             // Create stream to receive response from the server
             InputStream is = socket.getInputStream();
@@ -56,7 +56,6 @@ public class TCPCustomerClientApp {
             } else {
                 System.out.println("\tCustomer not found");
             }
-        
 
             // 3. Read respond from the server - cast the object
             // List<Customer> customers = (List<Customer>) ois.readObject();
@@ -83,15 +82,8 @@ public class TCPCustomerClientApp {
 
             // 4. Close connection
             socket.close();
-            
 
-
-
-
-
-            
             // 4. Display the result
-
 
             // get string input from user
             // String customerName = customerViewer.getCustomerName();
