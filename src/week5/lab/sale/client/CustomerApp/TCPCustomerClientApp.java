@@ -20,6 +20,8 @@ public class TCPCustomerClientApp {
 
     public static void main(String[] args) {
 
+        Customer customer;
+
         try {
 
             // Server information
@@ -47,7 +49,7 @@ public class TCPCustomerClientApp {
             ObjectInputStream ois = new ObjectInputStream(is);
 
             // read customer object from server
-            Customer customer = (Customer) ois.readObject();
+            customer = (Customer) ois.readObject();
 
             // print customer information if customer is not null
             if (customer != null) {
@@ -57,17 +59,11 @@ public class TCPCustomerClientApp {
                 System.out.println("\tCustomer not found");
             }
 
-            // 3. Read respond from the server - cast the object
-            // List<Customer> customers = (List<Customer>) ois.readObject();
-
             // read string input from user
             String customerName = customerViewer.getCustomerName();
 
             // send customer name to server to search customer by customer name
             dos.writeUTF(customerName);
-
-            // get customer from server
-            // Create stream to receive response from the server
 
             // read customer object from server
             customer = (Customer) ois.readObject();
@@ -82,15 +78,6 @@ public class TCPCustomerClientApp {
 
             // 4. Close connection
             socket.close();
-
-            // 4. Display the result
-
-            // get string input from user
-            // String customerName = customerViewer.getCustomerName();
-            // customerViewer.searchCustomerByName(customers, customerName);
-
-            // 4. Process response - display the object
-            // customerViewer.displayCustomers(customers);
 
         } catch (Exception ex) {
 

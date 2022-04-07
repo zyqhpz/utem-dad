@@ -51,4 +51,50 @@ public class CustomerViewer {
         return customers;
     }
 
+    public void displayResult(List<Customer> customers) {
+
+        // read int input from user
+        int customerId = getCustomerId();
+
+        boolean found = false;
+
+        // print customer information if customer is not null
+        if (customers != null) {
+            for (Customer customer : customers) {
+                if (customer.getCustomerId() == customerId) {
+                    System.out.println("Customer name: " + customer.getName());
+                    System.out.println("Customer id: " + customer.getCustomerId());
+                    found = true;
+                    break;
+                }
+            }
+            if (!found) {
+                System.out.println("Customer not found");
+            }
+        } else {
+            System.out.println("\tCustomers object null");
+        }
+
+        // read string input from user
+        String customerName = getCustomerName();
+
+        found = false;
+        // print customer information if customer is not null
+        if (customers != null) {
+            for (Customer customer : customers) {
+                // convert all name to lower case
+                if (customer.getName().toLowerCase().contains(customerName.toLowerCase())) {
+                    System.out.println("Customer name: " + customer.getName());
+                    System.out.println("Customer id: " + customer.getCustomerId());
+                    found = true;
+                }
+            }
+            if (!found) {
+                System.out.println("Customer not found");
+            }
+        } else {
+            System.out.println("\tCustomers object null");
+        }
+    }
+
 }

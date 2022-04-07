@@ -1,6 +1,5 @@
 package week5.lab.sale.server.app;
 
-import java.io.DataInputStream;
 import java.io.ObjectOutputStream;
 import java.io.OutputStream;
 import java.net.ServerSocket;
@@ -10,7 +9,7 @@ import java.util.List;
 import week5.lab.sale.model.Customer;
 import week5.lab.sale.server.controller.CustomerDataManager;
 
-public class TCPCustomerServerApp {
+public class TCPCustomerServerApp1 {
 
     public static void main(String[] args) {
 
@@ -19,8 +18,6 @@ public class TCPCustomerServerApp {
         CustomerDataManager manager = new CustomerDataManager();
 
         System.out.println("\n\tExecuting TCPCustomerServerApp");
-
-        Customer customer;
 
         try {
 
@@ -35,38 +32,16 @@ public class TCPCustomerServerApp {
                 // 3. Accept request from client
                 Socket clientSocket = serverSocket.accept();
 
-                // Get customers
+                // generate customers
                 List<Customer> customers = manager.getCustomers();
 
-                // read customer id from client request
-                DataInputStream dis = new DataInputStream(clientSocket.getInputStream());
-                int customerId = dis.readInt();
-
-                System.out.println("\n\tCustomer Id Received: " + customerId);
-
-                // search customer by customer id
-                customer = manager.searchCustomerById(customerId);
-
-                // send customer to client
+                // send customers object to client
                 OutputStream os = clientSocket.getOutputStream();
                 ObjectOutputStream oos = new ObjectOutputStream(os);
-                oos.writeObject(customer);
+                oos.writeObject(customers);
 
                 System.out.println("\tSending Customer object to client.. ");
 
-                // read customer name from client request
-                String customerName = dis.readUTF();
-
-                System.out.println("\n\tCustomer name Received: " + customerName);
-
-                // search customer by customer name
-                customer = manager.searchCustomerByName(customerName);
-
-                oos.writeObject(customer);
-
-                System.out.println("\tSending Customer object to client.. ");
-
-                // 4. Respond to client
             }
 
         } catch (Exception ex) {

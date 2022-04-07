@@ -40,7 +40,7 @@ public class CustomerDataManager {
 
         // create a loop to search a customer
         for (Customer c : customers) {
-            if (c.getName().equals(name)) {
+            if (c.getName().toLowerCase().contains(name.toLowerCase())) {
                 customer = c;
                 found = true;
                 break;
