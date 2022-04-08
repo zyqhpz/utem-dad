@@ -50,28 +50,21 @@ public class UDPCountServer {
                 // 6. Further processing
                 SentenceProcessor processor = new SentenceProcessor(receivedData);
                 String sentence = processor.getSentence();
-                System.out.println("\nSentence received from client: " + sentence + ".\n");
+                System.out.println("\nSentence received from client: '" + sentence + "' .\n");
 
-                // More processing
-                int totalCharacters = processor.countCharacters();
-                byte[] outData = processor.convertToByteArray(totalCharacters);
+                // Get the number of vowels, consonants and punctuation
+                int vowels = processor.getVowels();
+                int consonants = processor.getConsonants();
+                int punctuation = processor.getPunctuation();
 
-                // count vowels
-                int vowels = processor.countVowels();
                 byte[] outVowelData = processor.convertToByteArray(vowels);
-
-                // count consonants
-                int consonants = processor.countConsonants();
                 byte[] outConsonantData = processor.convertToByteArray(consonants);
-
-                // count punctuation
-                int punctuation = processor.countPunctuations();
                 byte[] outPunctuationData = processor.convertToByteArray(punctuation);
 
                 // 7. Get the client information
                 InetAddress clientAddress = receivedPacket.getAddress();
                 int clientPort = receivedPacket.getPort();
-                int sizeOutData = outData.length;
+                // int sizeOutData = outData.length;
 
                 // 8. Wrap data into datagram packet
                 // wrap vowels data in datagram packet

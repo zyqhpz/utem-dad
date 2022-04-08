@@ -3,17 +3,30 @@ package week5.lab.greeting.server.serverside;
 public class SentenceProcessor {
 
 	private int size = 65535;
-
 	private String sentence;
+	private int vowels;
+	private int consonants;
+	private int punctuation;
 
 	public SentenceProcessor(byte[] byteData) {
-
 		this.sentence = new String(byteData);
+		processSentence();
 	}
 
 	public String getSentence() {
-
 		return sentence;
+	}
+
+	public int getVowels() {
+		return vowels;
+	}
+
+	public int getConsonants() {
+		return consonants;
+	}
+
+	public int getPunctuation() {
+		return punctuation;
 	}
 
 	/**
@@ -51,78 +64,35 @@ public class SentenceProcessor {
 	}
 
 	/**
-	 * This method count the number of vowels in a sentence
+	 * This method process the sentence and count the number of vowels, consonants
+	 * and punctuation
+	 * regardless of case
 	 * 
-	 * @return
 	 */
-	public int countVowels() {
+	public void processSentence() {
 
-		int index = 0;
-		char currentChar = sentence.charAt(index);
-		int vowelCount = 0;
-		while (currentChar != '\0') {
+		vowels = 0;
+		consonants = 0;
+		punctuation = 0;
 
-			if (currentChar == 'a' || currentChar == 'e' || currentChar == 'i'
-					|| currentChar == 'o' || currentChar == 'u') {
+		sentence = sentence.toLowerCase();
+		for (int i = 0; i < sentence.length(); ++i) {
+			char ch = sentence.charAt(i);
 
-				vowelCount++;
+			// check if character is any of a, e, i, o, u
+			if (ch == 'a' || ch == 'e' || ch == 'i' || ch == 'o' || ch == 'u') {
+				++vowels;
 			}
 
-			currentChar = sentence.charAt(index++);
-		}
-
-		return vowelCount;
-
-	}
-
-	/**
-	 * This method count the number of consonants in a sentence
-	 * 
-	 * @return
-	 */
-	public int countConsonants() {
-
-		int index = 0;
-		char currentChar = sentence.charAt(index);
-		int consonantCount = 0;
-		while (currentChar != '\0') {
-
-			if (currentChar != 'a' && currentChar != 'e' && currentChar != 'i'
-					&& currentChar != 'o' && currentChar != 'u') {
-
-				consonantCount++;
+			// check if character is in between a to z
+			else if ((ch >= 'a' && ch <= 'z')) {
+				++consonants;
 			}
 
-			currentChar = sentence.charAt(index++);
-		}
-
-		return consonantCount;
-
-	}
-
-	/**
-	 * This method count the number of punctuation in a sentence
-	 * 
-	 * @return
-	 */
-	public int countPunctuations() {
-
-		int index = 0;
-		char currentChar = sentence.charAt(index);
-		int punctuationCount = 0;
-		while (currentChar != '\0') {
-
-			if (currentChar == '.' || currentChar == ',' || currentChar == '!'
-					|| currentChar == '?') {
-
-				punctuationCount++;
+			// check if character is any of the punctuation
+			else if (ch == '.' || ch == ',' || ch == '!' || ch == '?') {
+				++punctuation;
 			}
-
-			currentChar = sentence.charAt(index++);
 		}
-
-		return punctuationCount;
-
 	}
-
 }
