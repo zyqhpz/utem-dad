@@ -94,7 +94,7 @@ public class UDPCountServer {
                 System.out.println("Message sent\n(total vowels): " + vowels
                         + "\n(total consonants): " + consonants
                         + "\n(total punctuation): " + punctuation
-                        + ".\n");
+                        + "\n");
 
             }
 

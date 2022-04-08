@@ -1,5 +1,7 @@
 package week5.lab.greeting.client;
 
+import java.util.Scanner;
+
 public class Sentence {
 
     private String sentence;
@@ -16,9 +18,9 @@ public class Sentence {
     }
 
     public void getSentenceInput() {
-        System.out.println("Enter a sentence: ");
-        sentence = System.console().readLine();
+        System.out.print("Enter a sentence: ");
+        Scanner sc = new Scanner(System.in); // Create a Scanner object
 
-        setSentence(sentence);
+        sentence = sc.nextLine(); // Read user input
     }
 }

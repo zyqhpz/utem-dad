@@ -51,15 +51,19 @@ public class UDPCountClient {
 
             // 8. Receive data
             datagramSocket.receive(inPacket);
+            inData = inPacket.getData();
+            String vowels = new String(inData, 0, inPacket.getLength());
+            datagramSocket.receive(inPacket);
+            inData = inPacket.getData();
+            String consonants = new String(inData, 0, inPacket.getLength());
+            datagramSocket.receive(inPacket);
+            inData = inPacket.getData();
+            String punctuation = new String(inData, 0, inPacket.getLength());
 
             // 9. Extract data
-            inData = inPacket.getData();
 
             // 10. Further processing
             // Transform data into human readable text
-            String vowels = new String(inData, 0, inPacket.getLength());
-            String consonants = new String(inData, 0, inPacket.getLength());
-            String punctuation = new String(inData, 0, inPacket.getLength());
 
             // Display the data received from the server
             System.out.println("\tVowels from the server is : " + vowels);
