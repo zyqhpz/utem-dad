@@ -50,4 +50,79 @@ public class SentenceProcessor {
 		return index - 1;
 	}
 
+	/**
+	 * This method count the number of vowels in a sentence
+	 * 
+	 * @return
+	 */
+	public int countVowels() {
+
+		int index = 0;
+		char currentChar = sentence.charAt(index);
+		int vowelCount = 0;
+		while (currentChar != '\0') {
+
+			if (currentChar == 'a' || currentChar == 'e' || currentChar == 'i'
+					|| currentChar == 'o' || currentChar == 'u') {
+
+				vowelCount++;
+			}
+
+			currentChar = sentence.charAt(index++);
+		}
+
+		return vowelCount;
+
+	}
+
+	/**
+	 * This method count the number of consonants in a sentence
+	 * 
+	 * @return
+	 */
+	public int countConsonants() {
+
+		int index = 0;
+		char currentChar = sentence.charAt(index);
+		int consonantCount = 0;
+		while (currentChar != '\0') {
+
+			if (currentChar != 'a' && currentChar != 'e' && currentChar != 'i'
+					&& currentChar != 'o' && currentChar != 'u') {
+
+				consonantCount++;
+			}
+
+			currentChar = sentence.charAt(index++);
+		}
+
+		return consonantCount;
+
+	}
+
+	/**
+	 * This method count the number of punctuation in a sentence
+	 * 
+	 * @return
+	 */
+	public int countPunctuations() {
+
+		int index = 0;
+		char currentChar = sentence.charAt(index);
+		int punctuationCount = 0;
+		while (currentChar != '\0') {
+
+			if (currentChar == '.' || currentChar == ',' || currentChar == '!'
+					|| currentChar == '?') {
+
+				punctuationCount++;
+			}
+
+			currentChar = sentence.charAt(index++);
+		}
+
+		return punctuationCount;
+
+	}
+
 }
