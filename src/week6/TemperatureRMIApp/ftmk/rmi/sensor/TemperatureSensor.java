@@ -1,4 +1,4 @@
-package ftmk.rmi.sensor;
+package week6.TemperatureRMIApp.ftmk.rmi.sensor;
 
 import java.rmi.Remote;
 import java.rmi.RemoteException;
@@ -11,7 +11,7 @@ import java.util.Map;
  *
  */
 public interface TemperatureSensor extends Remote {
-	
+
 	/**
 	 * This method gets current temperature
 	 * 
@@ -20,9 +20,9 @@ public interface TemperatureSensor extends Remote {
 	 * @throws RemoteException
 	 */
 	public int getTemperature() throws RemoteException;
-	
+
 	public int getTemperatureByDay(String day) throws RemoteException;
-	
+
 	public Map<String, Integer> getTemperatures() throws RemoteException;
 
 }
