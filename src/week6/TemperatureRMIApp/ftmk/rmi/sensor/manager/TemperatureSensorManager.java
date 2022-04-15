@@ -1,6 +1,6 @@
 package week6.TemperatureRMIApp.ftmk.rmi.sensor.manager;
 
-import java.util.HashMap; // import the HashMap class
+import java.util.HashMap;
 import java.util.Map;
 import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
@@ -25,20 +25,15 @@ public class TemperatureSensorManager extends UnicastRemoteObject
 
 	@Override
 	public int getTemperature() throws RemoteException {
-
 		return 35;
 	}
 
 	@Override
 	public int getTemperatureByDay(String day) throws RemoteException {
-
-		// return 35;
 		return temperatures.get(day);
 	}
 
 	private void loadTemperatures() throws RemoteException {
-		// HashMap<String, Integer> temperatures = new HashMap<String, Integer>();
-
 		temperatures = new HashMap<String, Integer>();
 
 		temperatures.put("Monday", 32);
@@ -48,27 +43,21 @@ public class TemperatureSensorManager extends UnicastRemoteObject
 		temperatures.put("Friday", 36);
 		temperatures.put("Saturday", 33);
 		temperatures.put("Sunday", 33);
-
-		// return temperatures;
-
 	}
 
 	@Override
-	public Map<String, Integer> getTemperatures() {
+	public Map<String, Integer> getTemperatures() throws RemoteException {
 		return temperatures;
 	}
 
-	public String getDay() {
+	public String getDay() throws RemoteException {
 		System.out.println("Enter day: ");
 
 		return "Monday";
 	}
 
-	public double getAverage() {
+	public double getAverageTemperature() throws RemoteException {
 		int total = 0;
-		// for (int i = 0; i < temperatures.size(); i++) {
-		// total += temperatures.get
-		// }
 
 		for (Map.Entry<String, Integer> temp : temperatures.entrySet()) {
 			total += temp.getValue();
@@ -78,7 +67,5 @@ public class TemperatureSensorManager extends UnicastRemoteObject
 
 		return average;
 	}
-
-	// public Map
 
 }

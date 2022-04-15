@@ -25,4 +25,6 @@ public interface TemperatureSensor extends Remote {
 
 	public Map<String, Integer> getTemperatures() throws RemoteException;
 
+	public double getAverageTemperature() throws RemoteException;
+
 }

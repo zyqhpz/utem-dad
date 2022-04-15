@@ -6,6 +6,7 @@ import java.rmi.registry.LocateRegistry;
 import java.rmi.registry.Registry;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Scanner;
 
 import week6.TemperatureRMIApp.ftmk.rmi.sensor.TemperatureSensor;
 
@@ -27,24 +28,28 @@ public class TemperatureClientRMIApp {
 			// Look-up for the remote object
 			TemperatureSensor remoteSensorAyerKeroh = (TemperatureSensor) rmiRegistry.lookup("SensorAyerKeroh");
 
-			// HashMap<String, Integer> temperatures =
-			// remoteSensorAyerKeroh.getTemperatureByDay();
+			// Invoke method from the remote object
+			System.out.println(
+					"Current temperature in Jasin is " + remoteSensorAyerKeroh.getTemperature() + " Celcius\n");
 
-			// Hashtemperatures = remoteSensorAyerKeroh.getTemperatureByDay();
+			Scanner sc = new Scanner(System.in);
+			System.out.print("Enter day to get temperature by day: ");
+			String day = sc.nextLine();
 
 			// Invoke method from the remote object
-			// int currentTemperature = remoteSensorJasin.getTemperature();
+			int currentTemperature = remoteSensorAyerKeroh.getTemperatureByDay(day);
 
-			int currentTemperature = remoteSensorAyerKeroh.getTemperatureByDay("Tuesday");
+			System.out.println("Current temperature on " + day + " in Ayer Keroh is "
+					+ currentTemperature + " Celcius\n\n");
 
+			// Invoke method from the remote object
 			Map<String, Integer> temperatures = remoteSensorAyerKeroh.getTemperatures();
-
 			displayTemperatureList(temperatures);
 
-			System.out.println("Current temperature in Jasin is "
-					+ currentTemperature + " Celcius");
+			// get average temperature
+			double averageTemperature = remoteSensorAyerKeroh.getAverageTemperature();
 
-			String day = "Tuesday";
+			System.out.println("\n\nAverage temperature in Ayer Keroh is " + averageTemperature + " Celcius\n\n");
 
 		} catch (RemoteException | NotBoundException e) {
 			// TODO Auto-generated catch block
