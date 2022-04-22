@@ -33,10 +33,17 @@ public class CurrentTimeTask extends Thread {
 
 	@Override
 	public void run() {
+
+		Thread currentThread = Thread.currentThread();
+
+		System.out.println("Thread " + currentThread.getName() + " starts");
+
 		// Print current time for 10 times
 		for (int i = 0; i < 10; i++) {
-			System.out.println(i + ". - " + getCurrentTime());
+			System.out.println(currentThread.getName() + "-> " + i + ". - " + getCurrentTime());
 		}
+
+		System.out.println("Thread " + currentThread.getName() + " ends");
 	}
 
 }

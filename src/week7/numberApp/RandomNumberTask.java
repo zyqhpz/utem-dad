@@ -36,10 +36,17 @@ public class RandomNumberTask implements Runnable {
 
 	@Override
 	public void run() {
+
+		Thread currentThread = Thread.currentThread();
+
+		System.out.println("Thread " + currentThread.getName() + " starts");
+
 		// print 10 random numbers
 		for (int i = 0; i < 10; i++) {
-			System.out.println(i + ". - " + getRandomNumber());
+			System.out.println(currentThread.getName() + "-> " + i + ". - " + getRandomNumber());
 		}
+
+		System.out.println("Thread " + currentThread.getName() + " ends");
 	}
 
 }

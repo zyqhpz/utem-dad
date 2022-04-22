@@ -15,13 +15,22 @@ public class RandomNumberMultiThreadsApp {
 		Runnable randomNumberTask1 = new RandomNumberTask(1, 100);
 		Runnable randomNumberTask2 = new RandomNumberTask(5, 50);
 
-		// Create thread objects
-		Thread thread1 = new Thread(randomNumberTask1);
-		Thread thread2 = new Thread(randomNumberTask2);
+		// // Create thread objects
+		// Thread thread1 = new Thread(randomNumberTask1);
+		// Thread thread2 = new Thread(randomNumberTask2);
 
-		// Execute threads
-		thread1.start();
-		thread2.start();
+		// // Execute threads
+		// thread1.start();
+		// thread2.start();
+
+		Thread printerThread1 = new Thread(randomNumberTask1, "printerThread1");
+
+		Thread printerThread2 = new Thread(randomNumberTask2);
+		printerThread2.setName("printerThread2");
+
+		// Start threads
+		printerThread1.start();
+		printerThread2.start();
 
 		System.out.println("Program ends");
 
