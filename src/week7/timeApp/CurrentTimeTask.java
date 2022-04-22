@@ -41,6 +41,11 @@ public class CurrentTimeTask extends Thread {
 		// Print current time for 10 times
 		for (int i = 0; i < 10; i++) {
 			System.out.println(currentThread.getName() + "-> " + i + ". - " + getCurrentTime());
+			try {
+				Thread.sleep(4000);
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			}
 		}
 
 		System.out.println("Thread " + currentThread.getName() + " ends");
