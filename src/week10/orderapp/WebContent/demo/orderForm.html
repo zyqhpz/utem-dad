@@ -1,0 +1,22 @@
+<html>
+	<h3>Order Product</h3>
+	Select one of the item and specify the amount of item.<br>
+	Click Submit to get the total amount and service tax that will be
+	charged on you.<br>
+	<hr>
+	<form action="orderServlet" method="post">
+		Product : <br><br>
+		<input type="radio" name="product" value="101">
+		McChicken Value Meal - RM 13.20<br><br>
+		<input type="radio" name="product" value="102">
+		Smoky Grilled Beef Meal - RM 17.90<br><br>
+		<input type="radio" name="product" value="103">
+		Ayam Goreng McD Spicy Meal 2pcs - RM 16.95<br><br>
+		<input type="radio" name="product" value="104">
+		Spicy McChicken Deluxe Meal - RM 16.65<br><br>
+		<input type="radio" name="product" value="105">
+		Chicken McNuggets 6pcs Meal - RM 13.20<br><br>
+		Quantity: <input type="text" name="quantity"><br><br>
+		<input type="submit" value="Get total and tax">
+	</form>
+</html>
